@@ -1,0 +1,37 @@
+{
+  "name": "@fmtk/aws-custom-resource",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "author": "Gordon Leigh <gordon.leigh@futurematik.co.uk>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.33",
+    "aws-sdk": "^2.531.0",
+    "node-fetch": "^2.6.0"
+  },
+  "scripts": {
+    "build": "yarn clean && yarn lint && tsc",
+    "bumpfeat": "yarn version --minor && npm publish",
+    "bumpfix": "yarn version --patch && npm publish",
+    "bumpmajor": "yarn version --major && npm publish",
+    "clean": "rm -rf lib/",
+    "lint": "eslint \"src/**\"",
+    "postversion": "git push --follow-tags",
+    "prepare": "yarn build",
+    "preversion": "yarn build"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node-fetch": "^2.5.1",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  }
+}
