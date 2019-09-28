@@ -7,7 +7,6 @@
   "private": false,
   "dependencies": {
     "@types/aws-lambda": "^8.10.33",
-    "aws-sdk": "^2.531.0",
     "node-fetch": "^2.6.0"
   },
   "scripts": {
@@ -26,6 +25,7 @@
     "@types/node-fetch": "^2.5.1",
     "@typescript-eslint/eslint-plugin": "^2.3.0",
     "@typescript-eslint/parser": "^2.3.0",
+    "aws-sdk": "^2.531.0",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.1",
