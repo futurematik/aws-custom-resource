@@ -11,6 +11,7 @@ export interface CustomResourceSpec<T> {
     params: T,
     event: CloudFormationCustomResourceCreateEvent,
     context: Context,
+    autoId: string,
   ): Promise<CustomResourceResponse>;
 
   update?(

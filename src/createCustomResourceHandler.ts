@@ -54,7 +54,12 @@ export function createCustomResourceHandler<T>(
 
       switch (event.RequestType) {
         case 'Create':
-          response = await spec.create(props, event, context);
+          response = await spec.create(
+            props,
+            event,
+            context,
+            physicalResourceId,
+          );
           break;
 
         case 'Update':
