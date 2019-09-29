@@ -1,3 +1,4 @@
+import uuid from 'uuid/v4';
 import { AwsCustomResourceHandler } from './AwsCustomResourceHandler';
 import { sendResponse } from './sendResponse';
 import { CustomResourceSpec } from './CustomResourceSpec';
@@ -24,12 +25,13 @@ export function createCustomResourceHandler<T>(
       event,
     });
 
-    // fallback id to log stream name so that there is something to return
-    // if there's an error before it is created
-    const physicalResourceId =
-      event.RequestType === 'Create'
-        ? context.logStreamName
-        : event.PhysicalResourceId;
+    let physicalResourceId: string;
+
+    if (event.RequestType === 'Create') {
+      physicalResourceId = uuid();
+    } else {
+      physicalResourceId = event.PhysicalResourceId;
+    }
 
     let response: CustomResourceResponse = {
       responseStatus: 'SUCCESS',
