@@ -1,6 +1,6 @@
 {
   "name": "@fmtk/aws-custom-resource",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/index.js",
   "author": "Gordon Leigh <gordon.leigh@futurematik.co.uk>",
   "license": "MIT",
