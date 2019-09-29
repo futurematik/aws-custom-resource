@@ -5,3 +5,4 @@ export * from './CustomResourceSpec';
 export * from './makeDefaultLog';
 export * from './sendResponse';
 export * from './ValueValidator';
+export * from './withSource';
