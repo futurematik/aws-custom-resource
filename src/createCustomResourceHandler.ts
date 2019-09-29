@@ -16,6 +16,14 @@ export function createCustomResourceHandler<T>(
   options?: CustomResourceHandlerOptions<T>,
 ): AwsCustomResourceHandler {
   return async (event, context): Promise<void> => {
+    const { propertyValidator = undefined, logger = makeDefaultLog() } =
+      options || {};
+
+    logger({
+      message: `custom resource event`,
+      event,
+    });
+
     // fallback id to log stream name so that there is something to return
     // if there's an error before it is created
     const physicalResourceId =
@@ -27,9 +35,6 @@ export function createCustomResourceHandler<T>(
       responseStatus: 'SUCCESS',
       physicalResourceId,
     };
-
-    const { propertyValidator = undefined, logger = makeDefaultLog() } =
-      options || {};
 
     try {
       let props = (event.ResourceProperties as unknown) as T;
