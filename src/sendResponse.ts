@@ -14,6 +14,7 @@ export async function sendResponse(
     RequestId: event.RequestId,
     LogicalResourceId: event.LogicalResourceId,
     NoEcho: result.noEcho,
+    Data: result.data,
   };
 
   await fetch(event.ResponseURL, {
