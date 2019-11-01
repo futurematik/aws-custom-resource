@@ -1,4 +1,4 @@
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@fmtk/rollup-plugin-ts';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 
@@ -6,7 +6,7 @@ export default {
   input: './src/index.ts',
   output: [
     {
-      file: 'lib/bundle.mjs',
+      file: 'lib/bundle.esm.js',
       format: 'esm',
       sourcemap: true,
     },
